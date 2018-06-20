@@ -9,4 +9,4 @@ From tomcat:7-jre7
 # Maintainer
 MAINTAINER "acontrollu116@gmail.com""
 # Copy to images tomcat path
-ADD /target/spring3-mvc-maven-xml-hello-world-1.0-SNAPSHOT.war /home/spring3-mvc-maven-xml-hello-world-1.0-SNAPSHOT.war
+ADD spring3-mvc-maven-xml-hello-world-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/
