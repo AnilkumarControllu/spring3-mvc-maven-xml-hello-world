@@ -34,10 +34,10 @@ pipeline {
                        
      steps{
       
-         //sh "sudo docker run -p8088:8080  devops-poc1-${env.VERSION_NUMBER}/pipeline:latest"     
+         //sh "sudo docker run -p8085:8080  devops-poc1-${env.VERSION_NUMBER}/pipeline:latest"     
          sh """
                     sudo docker run -d \
-                        -p8088:8080 \
+                        -p8085:8080 \
                         -v /var/run/docker.sock:/var/run/docker.sock:ro \
                         -e TIMEOUT=30 \
                         devops-poc1/pipeline:latest
