@@ -27,7 +27,6 @@ pipeline {
       //sh "sudo docker stop devops-poc1/pipeline:latest" 
       //sh "sudo docker rm devops-poc1/pipeline:latest" 
       sh "sudo docker build -t devops-poc1/pipeline:latest ."
-	  sh "docker-composer build"
       sh "docker-compose up -d"
           }
      }
