@@ -24,9 +24,9 @@ pipeline {
     
     stage('Create Docker Image') {
      steps{
-      //sh "sudo docker stop devops-poc/pipeline:latest" 
-      //sh "sudo docker rm devops-poc/pipeline:latest" 
-      sh "sudo docker build -t devops-poc/pipeline:latest ."
+      //sh "sudo docker stop devops-poc1/pipeline:latest" 
+      //sh "sudo docker rm devops-poc1/pipeline:latest" 
+      sh "sudo docker build -t devops-poc1/pipeline:latest ."
           }
      }
  
@@ -34,13 +34,13 @@ pipeline {
                        
      steps{
       
-         //sh "sudo docker run -p8086:8080  devops-poc-${env.VERSION_NUMBER}/pipeline:latest"     
+         //sh "sudo docker run -p8086:8080  devops-poc1-${env.VERSION_NUMBER}/pipeline:latest"     
          sh """
                     sudo docker run -d \
                         -p8086:8080 \
                         -v /var/run/docker.sock:/var/run/docker.sock:ro \
                         -e TIMEOUT=30 \
-                        devops-poc/pipeline:latest
+                        devops-poc1/pipeline:latest
             """                        
            } 
        
