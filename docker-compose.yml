@@ -8,22 +8,3 @@ db:
     MYSQL_PASSWORD: example_db_pass
   volumes:
     - "./db:/docker-entrypoint-initdb.d"
-
-# First node of the first Tomcat virtual host.
-tomcat_1_node_1:
-  image: tomcat:latest
-  # Environment variables do not appear to be getting loaded the first time Tomcat starts!
-  environment:
-    VIRTUAL_HOST: tomcat_1.mulligan.ie
-    VIRTUAL_PORT: 8088
-    JDBC_URL: jdbc:mysql://db:3306/example_db?connectTimeout=0&amp;socketTimeout=0&amp;autoReconnect=true
-    JDBC_USER: example_db_user
-    JDBC_PASS: example_db_pass
-  volumes:
-    - "./tomcat/webapps:/usr/local/tomcat/webapps"
-  links:
-    - db
-
-
-
-
